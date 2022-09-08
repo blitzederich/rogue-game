@@ -1,0 +1,43 @@
+/**
+ * Copyright 2022 Alexander Samorodov <blitzerich@gmail.com>
+ */
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+}
+
+h1 { 
+	font-family: "Playfair Display"; 
+	font-size: 30px; 
+	margin: 0px;
+	padding: 10px 0px;
+}
+
+.field-box { border: 2px solid #d0d0d0; float: left; }
+.field { height: 640px; position: relative; width: 1024px; }
+.tile { background-image: url(../images/entity-floor.png); z-index: 5; }
+.tileW { background-image: url(../images/entity-wall.png); }
+.tileE { background-image: url(../images/entity-enemy.png); z-index: 10; }
+.tileP { background-image: url(../images/entity-player.png); z-index: 10; }
+.tileHP { background-image: url(../images/entity-healthpoint.png); z-index: 9; }
+.tileSW { background-image: url(../images/entity-sword.png); z-index: 9; }
+.tileE .health { background-color: #ff0000; height: 3px; left: 0px; position: absolute; top: 0px; z-index: 11; }
+.tileP .health { background-color: #00ff00; height: 3px; left: 0px; position: absolute; top: 0px; z-index: 11; }
+.inventory-box { border: 2px solid #d0d0d0; float: left; }
+.inventory { height: 32px; position: relative; width: 800px; }
+.cl::after { clear: both; content: ''; display: block; }
+
+.cell {
+	background-size: cover;
+	float: left;
+	height: 32px;
+	position: relative;
+	width: 32px;
+}
