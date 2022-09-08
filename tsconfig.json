@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "strict": true,
+      "target": "ES3",
+      "module": "ES2015",
+      "moduleResolution": "Node",
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "lib": ["DOM"],
+      "sourceMap": true,
+      "removeComments": false,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+    },
+    "include": ["src/**/*"],
+    "exclude": ["node_modules", "dist"]
+  }
