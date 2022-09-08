@@ -9,7 +9,9 @@
     "start": "NODE_ENV=development webpack serve",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:js": "eslint --fix --ext .tsx,.ts src/",
-    "lint:css": "stylelint --fix src/**/*.css"
+    "lint:css": "stylelint --fix src/**/*.css",
+    "deploy": "gh-pages -d dist",
+    "predeploy": "npm run build"
   },
   "author": "Alexander Samorodov <blitzederich@gmail.com>",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "babel-loader": "^8.2.5",
     "css-loader": "^6.7.1",
     "eslint": "^8.23.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
     "postcss-loader": "^7.0.1",
@@ -35,5 +38,6 @@
     "webpack-dev-server": "^4.10.1",
     "webpack-merge": "^5.8.0"
   },
-  "browserslist": "> 0.25%, not dead"
+  "browserslist": "> 0.25%, not dead",
+  "homepage": "https://blitzederich.github.io/rogue-game/"
 }
