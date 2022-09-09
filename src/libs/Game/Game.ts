@@ -172,18 +172,19 @@ export class Game {
 				cell.health! -= this.state.player.power;
 				this.state.enemies[cell.id!].healthpoint = cell.health!;
 
+				const {x, y} = this.state.enemies[cell.id!].position; 
+
 				if (cell.health! <= 0) {
 					this.state.enemies[cell.id!].healthpoint = 0;
-					const {x, y} = this.state.enemies[cell.id!].position; 
 					this.state.area[y][x].type = CellTypes.empty;
 					this.state.empty.push([y, x]);
 
 					this.state.area[y][x].id = undefined;
 					this.state.area[y][x].health = undefined;
 					delete this.state.enemies[cell.id!];
-
-					this.state.diffArea.push({x, y});
 				}
+				
+				this.state.diffArea.push({x, y});
 			}
 		});
 	}
@@ -321,14 +322,17 @@ export class Game {
 				if (upType === CellTypes.player || downType === CellTypes.player
 					|| leftType === CellTypes.player || rightType === CellTypes.player) {
 					this.state.player.healthpoint -= 20;
+					
+					const {x, y} = this.state.player.position;
+
+
 					if (this.state.player.healthpoint <= 0) {
-						this.state.player.healthpoint = 0;
-
-						const {x, y} = this.state.player.position;
+						this.state.player.healthpoint = 0;			
 						this.state.area[y][x].type = CellTypes.empty;
-
-						this.state.diffArea.push({x, y});
 					}
+
+					this.state.area[y][x].health = this.state.player.healthpoint;
+					this.state.diffArea.push({x, y});
 					return;
 				}
 
